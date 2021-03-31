@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div id="drop-area">
+            <div class="gallery">
+                <!-- items -->
+                <ul class="galleryList">
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550746.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964021.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550739.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964009.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550740.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964008.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964011.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550755.jpg" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="modal"></div>
+
+
+
+            </div>
+
+            <form class="dnd-form-img-uploader">
+                <p>Загрузите изображения с помощью диалога выбора файлов или перетащив нужные изображения в выделенную область
+                </p>
+                <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                <label class="button" for="fileElem">Выбрать изображения</label>
+            </form>
+        </div>
+
+        <form class="form-img-file-uploader">
+            <input type="file" class="form-img-file-uploader__input-file" placeholder="Insert JSON file" id="upload-file-input">
+            <!-- type="submit" delited -->
+            <button type="button" onclick="galleryLoad.fileUpload()" class="form-img-file-uploader__btn" id="upload-file-btn">Upload</button>
+        </form>
+
+        <form class="form-img-url-uploader">
+            <input type="url" class="form-img-url-uploader__input-url" placeholder="Insert image URL" id="upload-img-input">
+            <!-- type="submit" delited -->
+            <button type="button" class="form-img-url-uploader__btn" id="upload-img-btn">Upload</button>
+        </form>
+
+    </main>
+</body>
+
+<script src="main.js"></script>
+
+
+</html>
