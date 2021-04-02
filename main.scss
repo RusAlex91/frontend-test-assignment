@@ -37,8 +37,7 @@ img {
     vertical-align: bottom;
     transition: all 100ms ease-out;
     &:hover {
-        // animation: object-fit 1.1s;
-        // object-fit: scale-down;
+        transform: scale(1.05);
     }
 }
 
@@ -87,7 +86,26 @@ img {
 }
 
 .form-img-file-uploader {
-    margin-left: 15px;
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.form-img-file-uploader__input-file {
+    color: white;
+}
+
+.form-img-url-uploader {
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.form-img-url-uploader__input-url {
+    width: 200px;
+    font-size: 14px;
+}
+
+.form-img-url-uploader__btn {
+    margin-left: 45px;
 }
 
 .middleWrapper {
@@ -125,8 +143,8 @@ img {
         flex-direction: row;
     }
     li {
-        // height: auto;
-        // width: 100%;
+        height: auto;
+        width: 100%;
     }
     img {
         width: 80%;

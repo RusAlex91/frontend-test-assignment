@@ -99,7 +99,7 @@ const galleryLoad = {
         })
     },
     fileUpload: function() {
-        debugger
+
         input = document.getElementById('upload-file-input');
         if (!input.files[0]) {
             alert("Please select a file");
@@ -114,7 +114,6 @@ const galleryLoad = {
             let lines = e.target.result;
             var newArr = JSON.parse(lines);
             Object.keys(newArr.galleryImages).forEach(key => {
-                console.log(key)
                 galleryLoad.urlTemplateUpload(newArr.galleryImages[key].url)
             });
             galleryfill.createEventListners()
