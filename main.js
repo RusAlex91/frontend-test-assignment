@@ -219,3 +219,13 @@ galleryControls = {
     }
     //inital for exist images
 galleryControls.initDeleteBtn()
+
+function enableStylesheet() {
+
+    document.getElementById('main').href = 'alternative.css';
+    document.getElementsByClassName("galleryList")[0].classList.add("gallery-grid")
+}
+
+function disableStylesheet(node) {
+    node.rel = 'alternate stylesheet';
+}
