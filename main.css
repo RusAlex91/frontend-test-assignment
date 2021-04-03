@@ -6,6 +6,7 @@ body {
   max-width: 860px;
   min-width: 320px;
   position: relative;
+  border: 1px solid tomato;
 }
 
 .galleryList {
@@ -18,15 +19,27 @@ body {
 }
 
 .galleryList__item {
-  height: 20vh;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   list-style-type: none;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 li {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 li:last-child {
@@ -38,10 +51,8 @@ li:last-child {
 img {
   position: relative;
   cursor: pointer;
-  max-height: 100%;
-  min-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  max-width: 215px;
+  max-height: 100px;
   vertical-align: bottom;
   -webkit-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
@@ -77,6 +88,11 @@ img:hover {
   overflow: auto;
   background-color: black;
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+.changeTheme {
+  margin-top: 30px;
+  margin-left: 40px;
 }
 
 #drop-area {
@@ -142,6 +158,13 @@ img:hover {
   color: white;
   font-size: 16px;
   padding: 8px 16px;
+}
+
+.gallery-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 @media (max-height: 480px) {
