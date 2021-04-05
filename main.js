@@ -215,18 +215,17 @@ galleryControls = {
                     imgWrap.parentElement.removeChild(imgWrap);
                 });
             }
+        },
+        enableStylesheet: function(btnName, sheet) {
+            document.getElementsByClassName(`${btnName}`)[0].toggleAttribute("disabled")
+            document.getElementById('main').href = `${sheet}`;
+            document.getElementsByClassName("galleryList")[0].classList.toggle("gallery-grid")
+        },
+        disableStylesheet: function(btnName, sheet) {
+            document.getElementsByClassName(`${btnName}`)[0].toggleAttribute("disabled")
+            document.getElementById('main').href = `${sheet}`;
+            document.getElementsByClassName("galleryList")[0].classList.remove("gallery-grid")
         }
     }
     //inital for exist images
 galleryControls.initDeleteBtn()
-
-function enableStylesheet() {
-
-    document.getElementById('main').href = 'alternative.css';
-    document.getElementsByClassName("galleryList")[0].classList.add("gallery-grid")
-}
-
-function disableStylesheet(node) {
-    document.getElementById('main').href = 'main.css';
-    document.getElementsByClassName("galleryList")[0].classList.remove("gallery-grid")
-}
