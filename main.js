@@ -226,7 +226,7 @@ function enableStylesheet() {
     document.getElementsByClassName("galleryList")[0].classList.add("gallery-grid")
 }
 
-function disableStylesheet(node) {
+function disableStylesheet() {
     document.getElementById('main').href = 'main.css';
     document.getElementsByClassName("galleryList")[0].classList.remove("gallery-grid")
 }
