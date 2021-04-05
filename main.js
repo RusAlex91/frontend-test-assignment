@@ -227,5 +227,6 @@ function enableStylesheet() {
 }
 
 function disableStylesheet(node) {
-    node.rel = 'alternate stylesheet';
+    document.getElementById('main').href = 'main.css';
+    document.getElementsByClassName("galleryList")[0].classList.remove("gallery-grid")
 }
