@@ -18,47 +18,47 @@
                 <!-- items -->
                 <ul class="galleryList">
                     <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550746.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550746.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
                         <div class="middleWrapper">
                             <button class="middleWrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
                     <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964021.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964021.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
                         <div class="middleWrapper">
                             <button class="middleWrapper__deletebtn">Delete</button>
                         </div>
                     </li>
                     <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550739.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550739.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
                         <div class="middleWrapper">
                             <button class="middleWrapper__deletebtn">Delete</button>
                         </div>
                     </li>
                     <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964009.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
-                        </div>
-                    </li>
-
-                    <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550740.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964009.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
                         <div class="middleWrapper">
                             <button class="middleWrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
                     <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964008.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550740.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
                         <div class="middleWrapper">
                             <button class="middleWrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
                     <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964011.jpg" src="https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif" alt="" loading="lazy" decoding="async">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964008.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
+                        <div class="middleWrapper">
+                            <button class="middleWrapper__deletebtn">Delete</button>
+                        </div>
+                    </li>
+
+                    <li class="galleryList__item">
+                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964011.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
                         <div class="middleWrapper">
                             <button class="middleWrapper__deletebtn">Delete</button>
                         </div>
@@ -97,13 +97,15 @@
             <!-- type="submit" delited -->
             <button type="button" class="form-img-url-uploader__btn" id="upload-img-btn">Upload</button>
         </form>
-        <button class="themeBtnCover controlBtn" disabled onclick="this.toggleAttribute('disabled'), galleryControls.enableStylesheet('themeBtnFull','main.css')">Change
-            to
-            cover</button>
-        <button class="themeBtnFull controlBtn" onclick="this.toggleAttribute('disabled'), galleryControls.disableStylesheet('themeBtnCover','alternative.css')">Change
-            to
-            full
-            size</button>
+        <div class="themeControls">
+            <button class="themeControls__themeBtnCover controlBtn" disabled onclick="this.toggleAttribute('disabled'), galleryControls.enableStylesheet('themeControls__themeBtnFull','main.css')">Change
+                to
+                cover</button>
+            <button class="themeControls__themeBtnFull controlBtn" onclick="this.toggleAttribute('disabled'), galleryControls.disableStylesheet('themeControls__themeBtnCover','alternative.css')">Change
+                to
+                full
+                size</button>
+        </div>
     </main>
 </body>
 

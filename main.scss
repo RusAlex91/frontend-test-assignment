@@ -3,6 +3,11 @@ body {
     background-color: black;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 .gallery {
     max-width: $max-width;
     min-width: 320px;
@@ -50,8 +55,6 @@ img {
     min-height: 50vh;
     max-height: 50vh;
     max-width: $max-width;
-    // min-height: 100%;
-    // min-width: calc($max-width+200px);
     transition: 0.2s ease-out;
 }
 
@@ -71,7 +74,6 @@ img {
 #drop-area {
     padding: 2px;
     border: 2px dashed transparent;
-    width: $max-width;
 }
 
 #drop-area.highlight {
@@ -131,24 +133,60 @@ img {
     padding: 8px 16px;
 }
 
-@media (max-height: 480px) {
-    li {
-        height: 80vh;
+.themeControls {
+    margin-left: 40px;
+}
+
+@media screen and (min-width: 320px) {
+    .gallery {
+        max-width: 90vw;
+        position: relative;
+    }
+    .galleryList {
+        &__item {
+            height: 10vh;
+        }
+    }
+    .enlarged {
+        min-height: 20vh;
+        max-height: 20vh;
     }
 }
 
-// Smaller screens in portrait
-@media (max-width: 320px) {
-    ul {
-        flex-direction: row;
+@media screen and (min-width: 600px) {
+    .gallery {
+        max-width: 90vw;
+        position: relative;
     }
-    li {
-        height: auto;
-        width: 100%;
+    .galleryList {
+        &__item {
+            height: 15vh;
+        }
     }
-    img {
-        width: 80%;
-        max-height: 20vh;
-        max-width: 20vw;
+    .enlarged {
+        min-height: 25vh;
+        max-height: 25vh;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .gallery {
+        max-width: 90vw;
+        position: relative;
+    }
+    .galleryList {
+        &__item {
+            height: 20vh;
+        }
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .gallery {
+        max-width: 860px;
+        position: relative;
+    }
+    .img {
+        height: 20vh;
     }
 }

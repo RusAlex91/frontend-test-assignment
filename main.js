@@ -27,29 +27,28 @@ const galleryfill = {
         return Math.floor(Math.random() * (max - min) + min)
     },
     createEventListners: function() {
-
         let galleryArr = document.getElementsByClassName("galleryList__item")
         let modal = document.getElementsByClassName("modal")[0]
         var images = document.querySelectorAll('.galleryList__item img');
         Array.from(galleryArr).forEach((li, key) => {
-
             if (li.getAttribute('enlarge-modal-listener') !== 'true') {
                 li.addEventListener("click", function() {
                         li.classList.toggle("enlarged")
                         modal.classList.toggle("blackModal")
                     })
                     //check when image is load
-                images[key].addEventListener("load", (event) => {
-                    //Just for preloader demonstration when drag n drop image 
-                    setTimeout(() => {
-                        [].forEach.call(document.querySelectorAll('img[data-src-1]'), (img) => {
-                            img.setAttribute('src', img.getAttribute('data-src-1'));
-                            img.removeAttribute('data-src-1');
-                            galleryControls.initDeleteBtn()
-                        });
-                    }, 1000);
 
-                });
+                if (images[key].complete) {
+                    this.changeSrc()
+                } else {
+                    images[key].addEventListener("load", (event) => {
+                        //Just for preloader demonstration when drag n drop image 
+                        // setTimeout(() => {
+                        this.changeSrc()
+                            // }, 1000);
+
+                    });
+                }
                 modal.addEventListener("click", function() {
                     Array.from(galleryArr).forEach(li => {
                         li.classList.remove("enlarged")
@@ -59,11 +58,17 @@ const galleryfill = {
                 li.setAttribute('enlarge-modal-listener', 'true');
             }
         });
+    },
+    changeSrc: function() {
+        [].forEach.call(document.querySelectorAll('img[data-src-1]'), (img) => {
+            img.setAttribute('src', img.getAttribute('data-src-1'));
+            img.removeAttribute('data-src-1');
+            galleryControls.initDeleteBtn()
+        });
     }
 }
 
-//for initial images
-galleryfill.createEventListners()
+
 
 const galleryLoad = {
     urlTemplateUpload: function(imageSrc) {
@@ -77,7 +82,7 @@ const galleryLoad = {
         img.setAttribute("decoding", "async")
         img.setAttribute("data-src-1", imageSrc)
             //preloader img
-        img.src = "https://i.pinimg.com/originals/6b/67/cb/6b67cb8a166c0571c1290f205c513321.gif"
+        img.src = "https://www.coloreye.com/v_comm/global/images/loading.gif"
 
         li.appendChild(img)
         li.classList.add(`galleryList__item`);
@@ -96,6 +101,7 @@ const galleryLoad = {
             let imageInput = document.getElementById("upload-img-input");
             galleryLoad.urlTemplateUpload(imageInput.value)
             galleryfill.createEventListners()
+            dndHandlers.move()
         })
     },
     fileUpload: function() {
@@ -117,6 +123,7 @@ const galleryLoad = {
                 galleryLoad.urlTemplateUpload(newArr.galleryImages[key].url)
             });
             galleryfill.createEventListners()
+            dndHandlers.move()
         }
 
     },
@@ -126,13 +133,11 @@ const galleryLoad = {
             galleryLoad.urlTemplateUpload(url)
         }
         galleryfill.createEventListners()
+        dndHandlers.move()
     }
 }
 
 galleryLoad.urlUpload()
-
-
-
 
 const dndHandlers = {
     upload: function() {
@@ -203,11 +208,18 @@ dndHandlers.upload()
 dndHandlers.move()
 
 
-galleryControls = {
+const galleryControls = {
         initDeleteBtn: function() {
             var closeBtns = document.querySelectorAll('.middleWrapper__deletebtn')
 
             for (var i = 0, l = closeBtns.length; i < l; i++) {
+                closeBtns[i].removeEventListener('click', function(e) {
+                    e.stopPropagation()
+                    var imgWrap = this.parentElement.parentElement;
+
+                    imgWrap.parentElement.removeChild(imgWrap);
+                })
+
                 closeBtns[i].addEventListener('click', function(e) {
                     e.stopPropagation()
                     var imgWrap = this.parentElement.parentElement;
@@ -224,8 +236,11 @@ galleryControls = {
         disableStylesheet: function(btnName, sheet) {
             document.getElementsByClassName(`${btnName}`)[0].toggleAttribute("disabled")
             document.getElementById('main').href = `${sheet}`;
-            document.getElementsByClassName("galleryList")[0].classList.remove("gallery-grid")
+            document.getElementsByClassName("galleryList")[0].classList.toggle("gallery-grid")
         }
     }
     //inital for exist images
 galleryControls.initDeleteBtn()
+
+//for initial images
+galleryfill.createEventListners()
