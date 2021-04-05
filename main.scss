@@ -40,7 +40,6 @@ li:last-child {
 img {
     position: relative;
     cursor: pointer;
-    max-width: auto;
     max-height: 15vh;
     // object-fit: scale-down;
     // vertical-align: bottom;
@@ -58,12 +57,16 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-height: 50vh;
-    max-height: 50vh;
+    height: 50%;
+    width: 50%;
     max-width: $max-width;
     // min-height: 100%;
     // min-width: calc($max-width+200px);
     transition: 0.2s ease-out;
+}
+
+.enlarged img {
+    zoom: 250%
 }
 
 .blackModal {
