@@ -61,7 +61,8 @@ img:hover {
 }
 
 .enlarged img {
-    zoom: 250%;
+    min-height: 25vh;
+    max-height: 25vh;
 }
 
 .blackModal {
@@ -192,5 +193,9 @@ img:hover {
 @media screen and (min-width: 860px) {
     .gallery {
         width: 860px;
+    }
+    .enlarged img {
+        min-height: 25vh;
+        max-height: 45vh;
     }
 }

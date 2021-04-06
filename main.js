@@ -99,9 +99,14 @@ const galleryLoad = {
     urlUpload: function() {
         document.getElementById("upload-img-btn").addEventListener("click", function() {
             let imageInput = document.getElementById("upload-img-input");
-            galleryLoad.urlTemplateUpload(imageInput.value)
-            galleryfill.createEventListners()
-            dndHandlers.move()
+            if (imageInput.value == "") {
+                alert("Empty url")
+            } else {
+                galleryLoad.urlTemplateUpload(imageInput.value)
+
+                galleryfill.createEventListners()
+                dndHandlers.move()
+            }
         })
     },
     fileUpload: function() {
@@ -186,6 +191,7 @@ const dndHandlers = {
         }
 
         function drag(e) {
+
             dragSrcEl = this;
             e.dataTransfer.setData('text/html', this.innerHTML);
         }
@@ -197,15 +203,16 @@ const dndHandlers = {
 
         var cols = document.querySelectorAll('.galleryList__item');
         [].forEach.call(cols, function(col) {
-            col.addEventListener('dragstart', drag, false);
-            col.addEventListener('dragover', allowDrop, false);
-            col.addEventListener('drop', drop, false);
+            if (!col.getAttribute('data-move-listner')) {
+                col.setAttribute('data-move-listner', 'true');
+                col.addEventListener('dragstart', drag, false);
+                col.addEventListener('dragover', allowDrop, false);
+                col.addEventListener('drop', drop, false);
+            }
         });
     }
 }
 
-dndHandlers.upload()
-dndHandlers.move()
 
 
 const galleryControls = {
@@ -244,3 +251,6 @@ galleryControls.initDeleteBtn()
 
 //for initial images
 galleryfill.createEventListners()
+
+dndHandlers.upload()
+dndHandlers.move()
