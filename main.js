@@ -114,9 +114,18 @@ const galleryLoad = {
         input = document.getElementById('upload-file-input');
         if (!input.files[0]) {
             alert("Please select a file");
+        } else if (input.files[0].type == "image/jpeg") {
+            let fr = new FileReader();
+            fr.onload = function() {
+                galleryLoad.urlTemplateUpload(fr.result)
+                galleryfill.createEventListners()
+                dndHandlers.move()
+            }
+            fr.readAsDataURL(input.files[0]);
+
         } else {
-            var file = input.files[0];
-            var fr = new FileReader();
+            let file = input.files[0];
+            let fr = new FileReader();
             fr.onload = receivedText;
             fr.readAsText(file);
         }
