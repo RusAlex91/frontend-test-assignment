@@ -16,58 +16,51 @@
         <div id="drop-area">
             <div class="gallery">
                 <!-- items -->
-                <ul class="galleryList">
-                    <li class="galleryList__item">
+                <ul class="gallery-list">
+                    <li class="gallery-list__item">
                         <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550746.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
+                        <div class="middle-wrapper">
+                            <button class="middle-wrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
-                    <li class="galleryList__item">
+                    <li class="gallery-list__item">
                         <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964021.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
+                        <div class="middle-wrapper">
+                            <button class="middle-wrapper__deletebtn">Delete</button>
                         </div>
                     </li>
-                    <li class="galleryList__item">
+                    <li class="gallery-list__item">
                         <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550739.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
+                        <div class="middle-wrapper">
+                            <button class="middle-wrapper__deletebtn">Delete</button>
                         </div>
                     </li>
-                    <li class="galleryList__item">
+                    <li class="gallery-list__item">
                         <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964009.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
+                        <div class="middle-wrapper">
+                            <button class="middle-wrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
-                    <li class="galleryList__item">
+                    <li class="gallery-list__item">
                         <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550740.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
+                        <div class="middle-wrapper">
+                            <button class="middle-wrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
-                    <li class="galleryList__item">
+                    <li class="gallery-list__item">
                         <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964008.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
+                        <div class="middle-wrapper">
+                            <button class="middle-wrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
-                    <li class="galleryList__item">
+                    <li class="gallery-list__item">
                         <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/448964011.jpg" src="https://www.coloreye.com/v_comm/global/images/loading.gif" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
-                        </div>
-                    </li>
-
-                    <li class="galleryList__item">
-                        <img data-src-1="https://don16obqbay2c.cloudfront.net/frontend-test-task/images/493550755.jpg" alt="" loading="lazy" decoding="async">
-                        <div class="middleWrapper">
-                            <button class="middleWrapper__deletebtn">Delete</button>
+                        <div class="middle-wrapper">
+                            <button class="middle-wrapper__deletebtn">Delete</button>
                         </div>
                     </li>
 
@@ -87,7 +80,7 @@
         </div>
 
         <form class="form-img-file-uploader">
-            <input type="file" class="form-img-file-uploader__input-file" placeholder="Insert JSON file" id="upload-file-input" accept="image/x-png,image/gif,image/jpeg,application/JSON">
+            <input type="file" class="form-img-file-uploader__input-file" id="upload-file-input" accept="image/x-png,image/gif,image/jpeg,application/JSON">
             <!-- type="submit" delited -->
             <button type="button" onclick="galleryLoad.fileUpload()" class="form-img-file-uploader__btn" id="upload-file-btn">Upload</button>
         </form>
@@ -97,19 +90,20 @@
             <!-- type="submit" delited -->
             <button type="button" class="form-img-url-uploader__btn" id="upload-img-btn">Upload</button>
         </form>
-        <div class="themeControls">
-            <button class="themeControls__themeBtnCover controlBtn" disabled onclick="this.toggleAttribute('disabled'), galleryControls.enableStylesheet('themeControls__themeBtnFull','main.css')">Change
+        <div class="theme-controls">
+            <button class="theme-controls__theme-btn-cover control-btn" disabled onclick="this.toggleAttribute('disabled'), galleryControls.enableStylesheet('theme-controls__theme-btn-full ','main.css')">Change
                 to
                 cover</button>
-            <button class="themeControls__themeBtnFull controlBtn" onclick="this.toggleAttribute('disabled'), galleryControls.disableStylesheet('themeControls__themeBtnCover','alternative.css')">Change
+            <button class="theme-controls__theme-btn-full control-btn" onclick="this.toggleAttribute('disabled'), galleryControls.disableStylesheet('theme-controls__theme-btn-cover','alternative.css')">Change
                 to
                 full
                 size</button>
         </div>
     </main>
+    <script src="main.js"></script>
 </body>
 
-<script src="main.js"></script>
+
 
 
 </html>

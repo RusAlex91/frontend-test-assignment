@@ -27,9 +27,9 @@ const galleryfill = {
         return Math.floor(Math.random() * (max - min) + min)
     },
     createEventListners: function() {
-        let galleryArr = document.getElementsByClassName("galleryList__item")
+        let galleryArr = document.getElementsByClassName("gallery-list__item")
         let modal = document.getElementsByClassName("modal")[0]
-        var images = document.querySelectorAll('.galleryList__item img');
+        var images = document.querySelectorAll('.gallery-list__item img');
         Array.from(galleryArr).forEach((li, key) => {
             if (li.getAttribute('enlarge-modal-listener') !== 'true') {
                 li.addEventListener("click", function() {
@@ -42,11 +42,7 @@ const galleryfill = {
                     this.changeSrc()
                 } else {
                     images[key].addEventListener("load", (event) => {
-                        //Just for preloader demonstration when drag n drop image 
-                        // setTimeout(() => {
                         this.changeSrc()
-                            // }, 1000);
-
                     });
                 }
                 modal.addEventListener("click", function() {
@@ -72,7 +68,7 @@ const galleryfill = {
 
 const galleryLoad = {
     urlTemplateUpload: function(imageSrc) {
-        let gallery = document.getElementsByClassName("galleryList")[0]
+        let gallery = document.getElementsByClassName("gallery-list")[0]
         let li = document.createElement("li");
         let img = document.createElement('img');
         let div = document.createElement("div");
@@ -85,10 +81,10 @@ const galleryLoad = {
         img.src = "https://www.coloreye.com/v_comm/global/images/loading.gif"
 
         li.appendChild(img)
-        li.classList.add(`galleryList__item`);
+        li.classList.add(`gallery-list__item`);
 
-        div.classList.add("middleWrapper");
-        button.classList.add("middleWrapper__deletebtn");
+        div.classList.add("middle-wrapper");
+        button.classList.add("middle-wrapper__deletebtn");
         button.textContent = "delete"
         div.appendChild(button)
 
@@ -105,7 +101,7 @@ const galleryLoad = {
                 galleryLoad.urlTemplateUpload(imageInput.value)
 
                 galleryfill.createEventListners()
-                dndHandlers.move()
+                    //dndHandlers.move()()
             }
         })
     },
@@ -119,7 +115,7 @@ const galleryLoad = {
             fr.onload = function() {
                 galleryLoad.urlTemplateUpload(fr.result)
                 galleryfill.createEventListners()
-                dndHandlers.move()
+                    //dndHandlers.move()()
             }
             fr.readAsDataURL(input.files[0]);
 
@@ -137,7 +133,7 @@ const galleryLoad = {
                 galleryLoad.urlTemplateUpload(newArr.galleryImages[key].url)
             });
             galleryfill.createEventListners()
-            dndHandlers.move()
+                //dndHandlers.move()()
         }
 
     },
@@ -147,7 +143,7 @@ const galleryLoad = {
             galleryLoad.urlTemplateUpload(url)
         }
         galleryfill.createEventListners()
-        dndHandlers.move()
+            //dndHandlers.move()()
     }
 }
 
@@ -210,7 +206,7 @@ const dndHandlers = {
             this.innerHTML = e.dataTransfer.getData('text/html');
         }
 
-        var cols = document.querySelectorAll('.galleryList__item');
+        var cols = document.querySelectorAll('.gallery-list__item');
         [].forEach.call(cols, function(col) {
             if (!col.getAttribute('data-move-listner')) {
                 col.setAttribute('data-move-listner', 'true');
@@ -226,7 +222,7 @@ const dndHandlers = {
 
 const galleryControls = {
         initDeleteBtn: function() {
-            var closeBtns = document.querySelectorAll('.middleWrapper__deletebtn')
+            var closeBtns = document.querySelectorAll('.middle-wrapper__deletebtn')
 
             for (var i = 0, l = closeBtns.length; i < l; i++) {
                 closeBtns[i].removeEventListener('click', function(e) {
@@ -247,12 +243,12 @@ const galleryControls = {
         enableStylesheet: function(btnName, sheet) {
             document.getElementsByClassName(`${btnName}`)[0].toggleAttribute("disabled")
             document.getElementById('main').href = `${sheet}`;
-            document.getElementsByClassName("galleryList")[0].classList.toggle("gallery-grid")
+            document.getElementsByClassName("gallery-list")[0].classList.toggle("gallery-grid")
         },
         disableStylesheet: function(btnName, sheet) {
             document.getElementsByClassName(`${btnName}`)[0].toggleAttribute("disabled")
             document.getElementById('main').href = `${sheet}`;
-            document.getElementsByClassName("galleryList")[0].classList.toggle("gallery-grid")
+            document.getElementsByClassName("gallery-list")[0].classList.toggle("gallery-grid")
         }
     }
     //inital for exist images
@@ -262,4 +258,4 @@ galleryControls.initDeleteBtn()
 galleryfill.createEventListners()
 
 dndHandlers.upload()
-dndHandlers.move()
+    //dndHandlers.move()()
