@@ -132,7 +132,7 @@ img:hover {
   text-align: center;
 }
 
-.gallery-list__item:hover .middleWrapper {
+.gallery-list__item:hover .middle-wrapper {
   opacity: 1;
 }
 

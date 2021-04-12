@@ -85,7 +85,7 @@ const galleryLoad = {
 
         div.classList.add("middle-wrapper");
         button.classList.add("middle-wrapper__deletebtn");
-        button.textContent = "delete"
+        button.textContent = "Delete"
         div.appendChild(button)
 
         li.appendChild(div)
@@ -101,7 +101,7 @@ const galleryLoad = {
                 galleryLoad.urlTemplateUpload(imageInput.value)
 
                 galleryfill.createEventListners()
-                    //dndHandlers.move()()
+                dndHandlers.move()
             }
         })
     },
@@ -115,7 +115,7 @@ const galleryLoad = {
             fr.onload = function() {
                 galleryLoad.urlTemplateUpload(fr.result)
                 galleryfill.createEventListners()
-                    //dndHandlers.move()()
+                dndHandlers.move()
             }
             fr.readAsDataURL(input.files[0]);
 
@@ -133,7 +133,7 @@ const galleryLoad = {
                 galleryLoad.urlTemplateUpload(newArr.galleryImages[key].url)
             });
             galleryfill.createEventListners()
-                //dndHandlers.move()()
+            dndHandlers.move()
         }
 
     },
@@ -143,7 +143,7 @@ const galleryLoad = {
             galleryLoad.urlTemplateUpload(url)
         }
         galleryfill.createEventListners()
-            //dndHandlers.move()()
+        dndHandlers.move()
     }
 }
 
@@ -228,17 +228,20 @@ const galleryControls = {
                 closeBtns[i].removeEventListener('click', function(e) {
                     e.stopPropagation()
                     var imgWrap = this.parentElement.parentElement;
-
                     imgWrap.parentElement.removeChild(imgWrap);
+
                 })
 
                 closeBtns[i].addEventListener('click', function(e) {
                     e.stopPropagation()
                     var imgWrap = this.parentElement.parentElement;
-
                     imgWrap.parentElement.removeChild(imgWrap);
+                    let modal = document.getElementsByClassName("modal")[0]
+                    modal.classList.toggle("blackModal")
                 });
             }
+
+
         },
         enableStylesheet: function(btnName, sheet) {
             document.getElementsByClassName(`${btnName}`)[0].toggleAttribute("disabled")
@@ -258,4 +261,4 @@ galleryControls.initDeleteBtn()
 galleryfill.createEventListners()
 
 dndHandlers.upload()
-    //dndHandlers.move()()
+dndHandlers.move()
